@@ -10,12 +10,14 @@ def df(x):
 # Método de Newton-Raphson
 def newton_raphson(f, df, x0, epsilon, max_iter):
     x = x0
+    iteracoes = 0
     for i in range(max_iter):
         x_new = x - f(x) / df(x)
-        if abs(x_new - x) < epsilon: #por ser a precisão
-            return x_new
+        if abs(x_new - x) < epsilon:
+            return x_new, iteracoes
         x = x_new
-    return None
+        iteracoes += 1
+    return None, iteracoes
 
 # Intervalos e precisão
 intervalos = [(-3, -2), (9, 10)]
@@ -27,11 +29,12 @@ for intervalo in intervalos:
     print(f"Iterações para o intervalo {intervalo}:")
     raiz_encontrada = None
     for x0 in intervalo:
-        raiz = newton_raphson(f, df, x0, epsilon, max_iter) #parâmetros para a func
+        raiz, iteracoes = newton_raphson(f, df, x0, epsilon, max_iter) #parâmetros para a func
         if raiz is not None:
             raiz_encontrada = raiz
             break
     if raiz_encontrada is not None:
         print(f"Raiz encontrada: {raiz_encontrada}")
+        print(f'Número de iterações: {iteracoes}')
     else:
         print("Não foi possível encontrar a raiz com a precisão especificada.")
