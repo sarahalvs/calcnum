@@ -23,8 +23,8 @@ def bissecao(a, b, epsilon, max_iter):
 
 # Determinando os intervalos, precisões e máximo de iteração
 intervalos = [(-3, -2), (9, 10)]
-epsilon = 1.0e-1
-max_iter = 5
+epsilon = 1.0e-20
+max_iter = 67
 
 # encontrando as raízes em cada intervalo
 for intervalo in intervalos:
