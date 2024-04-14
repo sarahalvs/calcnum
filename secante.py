@@ -20,8 +20,8 @@ def secante(f, x0, x1, epsilon, max_iter):
 
 # Intervalos, precisão e iteração
 intervalos = [(-3, -2), (9, 10)]
-epsilon = 1.0e-7
-max_iter = 5
+epsilon = 1.0e-20
+max_iter = 67
 
 # Iterações para cada intervalo
 for intervalo in intervalos:
