@@ -21,8 +21,8 @@ def newton_raphson(f, df, x0, epsilon, max_iter):
 
 # Intervalos e precisão
 intervalos = [(-3, -2), (9, 10)]
-epsilon = 1e-14
-max_iter = 5
+epsilon = 1.0e-20
+max_iter = 67
 
 # Iterações para cada intervalo
 for intervalo in intervalos:
